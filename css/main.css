@@ -1,0 +1,289 @@
+*{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+  scroll-behavior: smooth;  
+}
+
+body{
+    font-family: sans-serif;
+
+width: 100%;
+overflow-x: hidden;
+background-color: #22254b;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #373b69;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+}
+header>.logo{
+    color: white;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    background: -webkit-linear-gradient( orange,white );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+header>form>.search{
+    background-color: white;
+    border: 2px solid #22254b;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 50px;
+}
+header>form>.search:focus{
+    outline: none;
+    background-color: #22254b;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(5 , 1fr);
+gap: 10px;
+
+    margin: 100px 20px 100px 20px ;
+
+}
+.card{
+    width: 400px;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: #373b69;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.card>.img>img{
+   max-width: 100%;
+
+    object-fit: cover;
+}
+.card>.topic{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    align-items: center;
+}
+.card>.topic>h4{
+    margin-top: 0;
+}
+.card>.topic>span{
+    background-color: #22254b;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+}
+.card>.topic>span.green{
+    color: lightgreen;
+}
+.card>.topic>span.red{
+    color: red;
+}
+.card>.topic>span.orange{
+    color: orange;
+}
+.card>.overview{
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 5px;
+    max-height: 100%;
+    height: 90%;
+    transform: translateY(100%);
+    transition:transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+}
+.card>.overview>form>button{
+    color: white;
+    padding: 15px 30px;
+    background-color: orange;
+    border-radius: 50px;
+    cursor: pointer;
+     border: 1px solid white;
+     margin-top: 10px;
+
+    }
+    .card>.overview>form>button:hover{
+        background-color: #22254b;
+       
+    }
+.card>.overview>p{
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-top: 10px;
+
+}
+.card:hover .overview{
+    transform: translateY(0);
+}
+.tags{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+margin: 200px auto;
+gap: 10px;
+flex-wrap: wrap;
+width: 100%;
+
+
+}
+.tags>.tag{
+
+color: white;
+padding: 15px 20px;
+background-color: orange;
+border-radius: 50px;
+cursor: pointer;
+ border: 1px solid white;
+}
+.tags>.tag:hover{
+    background-color: #22254b;
+   
+}
+
+.tags>.tag.highlight{
+ background-color: red;
+}
+.find{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 100px;
+}
+@media  (min-width:300px) and (max-width:576px){
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(1 , 1fr);
+   gap: 20px;
+   overflow: hidden;
+}
+.card{
+    width: 100%;
+}
+
+.card>.img>img{
+
+    object-fit: cover;
+    width: 100%;
+}
+.find{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 100px;
+}
+}
+@media  (min-width:577px) and (max-width:768px){
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+   gap: 20px;
+   overflow: hidden;
+}
+.card{
+    width: 100%;
+}
+
+.card>.img>img{
+
+    object-fit: cover;
+    width: 100%;
+}
+.find{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 100px;
+}
+}  
+@media  (min-width:769px) and (max-width:992px){
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+   gap: 20px;
+   overflow: hidden;
+}
+.card{
+    width: 100%;
+}
+
+.card>.img>img{
+
+    object-fit: cover;
+    width: 100%;
+}
+.find{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 100px;
+}
+}  
+@media  (min-width:993px) and (max-width:1200px){
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+   gap: 20px;
+   overflow: hidden;
+}
+
+.card{
+    width: 100%;
+}
+.card>.img>img{
+
+    object-fit: cover;
+    width: 100%;
+}
+.find{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 100px;
+}
+}  
+@media  (min-width:1201px) and (max-width:1400px){
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(5 , 1fr);
+   gap: 20px;
+   overflow: hidden;
+}
+.card{
+    width: 100%;
+}
+
+.card>.img>img{
+
+    object-fit: cover;
+    width: 100%;
+}
+.find{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 100px;
+}
+}  

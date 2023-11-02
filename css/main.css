@@ -1,0 +1,345 @@
+*{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+  scroll-behavior: smooth;  
+}
+
+body{
+    font-family: sans-serif;
+
+width: 100%;
+overflow-x: hidden;
+
+}
+/* start scroll top */
+.up{
+  position: fixed;
+  cursor: pointer;
+  bottom: 10px;
+  right: -40px;
+  background-color: #ff5;
+  color: #333;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 50%;
+  font-family: Arial, Tahoma;
+
+  transition: 0.2s ease-in-out;
+}
+.up.show{
+  right: 10px;
+}
+/* end scroll top */
+/* scroll section */
+.scroller{
+    background-color: #009688;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100px;
+    height: 10px;
+}
+/* end scroll section */
+
+/* start slider section */
+.slider-container {
+    margin: 100px auto;
+    width: 800px;
+    height: 400px;
+    position: relative;
+  }
+  .slider-container img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .slider-container img.active {
+    opacity: 1;
+  }
+  .slider-container .slide-number {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgba(0, 0, 0, .6);
+    color: #FFF;
+    padding: 5px 10px;
+    font-size: 20px;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  .slider-controls {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 50px;
+  }
+  .slider-controls .prev,
+  .slider-controls .next {
+    background-color: #009688;
+    color: #FFF;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    user-select: none;
+    width: 20%;
+  }
+  .slider-controls .prev {
+    float: left;
+  }
+  .slider-controls .next {
+    float: right;
+  }
+  .slider-controls .prev.disabled,
+  .slider-controls .next.disabled {
+    background-color: rgba(0, 150, 136, 0.5);
+    cursor: no-drop;
+  }
+  .slider-controls .indicators {
+    width: 60%;
+    float: left;
+  }
+  .slider-controls .indicators ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+  }
+  .slider-controls .indicators ul li {
+    display: inline-block;
+    background-color: #F6F6F6;
+    color: #333;
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 5px;
+    line-height: 28px;
+    cursor: pointer;
+  }
+  .slider-controls .indicators ul li.active {
+    background-color: #009688;
+    color: #FFF;
+  }
+  /* end slider section */
+  /* start tabs */
+  .tab{
+    display: flex;
+    flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #f5f5f5;
+ padding: 200px 100px;
+ margin-top: 100px;
+  }
+  .tabs{
+    display: flex;
+list-style-type: none;
+   width: 600px;
+
+
+padding: 0;
+  }
+  .tabs>li{
+    padding: 30px 40px;
+    background-color: #f6f6f6;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    width: 100%;
+  }
+  .tabs>li.active,
+  .tabs>li:hover{
+background-color: #ddd;
+  }
+  .contents{
+    width: 600px;
+overflow: hidden;
+background-color: #ddd;
+  }
+.contents>div{
+  padding: 50px 30px;
+height: 300px;
+width: 100%;
+line-height: 1.8;
+letter-spacing: 1px;
+}
+.contents>div:not(:first-child){
+  display: none;
+}
+/* ennd tabs */
+/* start filter */
+.switcher{
+  padding: 200px 100px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;}
+.switcher>.switch{
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+
+}
+.switcher>.switch>li{
+  padding: 10px 15px;
+  font-weight: bold;
+  background-color: #eee;
+  cursor: pointer;
+  min-width: 110px;
+  text-align: center;
+  transition: 0,2s ease-in-out;
+}
+.switcher>.switch>li.active,.switcher>.switch>li:hover{
+background-color: red;
+  color: white;
+}
+.switcher>.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  width: 850px;
+  margin: 100px auto;
+
+}
+.switcher>.gallery>img{
+  margin-bottom: 10px;
+  transition: 0.3s;
+  margin-left: 7px;
+  margin-right: 7px;
+  
+   }
+   .switcher>.gallery>img:hover{
+     transform: scale(1.2);
+
+   }
+/* end filter */
+/* start skills */
+
+
+.skills{
+  padding: 200px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+align-items: center;
+background-color: #f5f5f5;
+}
+.skills>.skill{
+  position: relative;
+  width: 500px;
+  height: 40px;
+  background-color: white;
+  margin: 25px;
+border: 1px solid;
+}
+.skills>.skill>span{
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+
+  transition: width 0.3s linear;
+}
+.skills>.skill>p{
+  position: absolute;
+  top: -40px;
+  font-size: 30px;
+  font-style: italic;
+  color: #555;
+}
+.skills>.skill>.one{
+  background-color: orange;
+}
+.skills>.skill>.two{
+ background-color: blue;
+}
+.skills>.skill>.three{
+  background-color: yellow;
+}
+.skills>.skill>.four{
+
+   background-color: lightskyblue;
+}
+.skills>.skill>.five{
+  background-color: blueviolet;
+}
+.skills>.skill>.six{
+  background-color: green;
+}
+/* end skills */
+ @media (min-width:200px) and (max-width:299px){
+    .slider-container{
+        width: 300px;
+        overflow: hidden;
+    }
+    .slider-controls{
+        width: 300px;
+    }
+}
+@media (min-width:300px) and (max-width:576px){
+    .slider-container{
+        width: 500px;
+        overflow: hidden;
+    }
+    .slider-controls{
+        width: 500px;
+    }
+    .switcher>.gallery{
+   width: 400px;
+    }
+    .tabs{
+width: 400px;
+    }
+    .contents{
+      width: 400px;
+    }
+}
+@media (min-width:577px) and (max-width:768px){
+    .slider-container{
+        width: 600px;
+        overflow: hidden;
+    }
+    .slider-controls{
+        width: 600px;
+    }
+
+    .switcher>.gallery{
+      width: 500px;
+
+       }
+       .tabs{
+        width: 500px;
+            }
+            .contents{
+              width: 500px;
+            }
+}
+@media (min-width:769px) and (max-width:992px){
+    .slider-container{
+        width: 700px;
+        overflow: hidden;
+    }
+    .slider-controls{
+        width: 700px;
+    }
+    .switcher>.gallery{
+      width: 600px;
+       }
+       .tabs{
+        width: 550px;
+            }
+            .contents{
+              width: 550px;
+            }
+}
